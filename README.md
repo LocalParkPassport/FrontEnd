@@ -2,7 +2,7 @@
 Front-End/ React section of the Park Passport Application
 
 
-##Web Unit 2 MVP Requirements[Suffyan Tariq]:
+## Web Unit 2 MVP Requirements[Suffyan Tariq]:
 
 Student created functional components and used events in application to add dynamic functionality to app.
 
@@ -12,7 +12,7 @@ Student implemented GET requests using either Axios or Fetch to display 3rd part
 
 Student has set up component management for the forms in the app that makes sense for each form. Student made the decision to use a third-party library, like Formik, or not, and can defend their decision. Some form validation is in place.
 
-###Stretch:
+### Stretch:
 
 Student created functional components and used events in application to add dynamic functionality to app.
 
@@ -23,7 +23,7 @@ Student implemented GET requests using either Axios or Fetch to display 3rd part
 Student has set up component management for the forms in the app that makes sense for each form. Student made the decision to use a third-party library, like Formik, or not, and can defend their decision. Some form validation is in place.
 
 
-##Web Unit 3 MVP Requirements[Dante Bui]:
+## Web Unit 3 MVP Requirements[Dante Bui]:
 
 React application is deployed and the static landing page is correctly incorporated with the app.
 
@@ -31,7 +31,7 @@ CRUD operations drive the application. Each participating student individually c
 
 Student has implemented a state management system that makes sense for the project. It is organized well and implemented correctly. State is not lost as user goes through the application.
 
-###Stretch:
+### Stretch:
 
 App is deployed, and continuous deployment is set up in a manner that is conducive to a team project environment. Project is organized well on GitHub. Extra considerations were made to help all team members understand how to contribute easily to the project, no matter their role.
 
