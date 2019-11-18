@@ -51,3 +51,50 @@ App is deployed, and continuous deployment is set up in a manner that is conduci
 Pages making HTTP requests do so in a logical manner that is cohesive with the app's state management system. Student showed great care and insight when handling token authentication. Student used a modular system for all requests (e.g. like a  useFetch custom hook).
 
 Student showed the ability to manage state in a very coherent system at all levels of the app - global state management, component tree state management, and individual component management. The system is easy to understand and use. Student may have also architected it in such a way that it is reusable for a lot of the state management needs of the app.
+
+# Daily Schedule and Goals Front End:
+
+### Friday
+- [ ]  Discover who your team and assigned TL are and get into a Slack Channel organized by your Project Lead.
+- [ ]  Complete the Ice Breaker activity and submit the Ice Breaker Wrap Up form.
+- [ ]  Make sure you are proactive joining your team's Github org and Trello Board that is created by your assigned TL.
+- [ ]  If your team has a UX designer, they will lead the team in a meeting about the features/design of your product
+- [ ]  Make a copy of the [linked canvas](https://www.notion.so/lambdaschool/Product-Vision-bcc33f41ecc94cd395ebdbb4504b1f23) and work together as a team to fill it out.
+- [ ]  iOS Developers must set up App Store Connect by Monday. Please carefully read and follow the [Lambda App Store Connect Guide](https://github.com/LambdaSchool/ios-app-store-connect-guide).
+- [ ]  Please find time to do this before Monday morning and get a link to this product canvas into the front end README and pin it to your Slack Channel.
+
+### Monday
+- [ ]  Use React and front end styling platforms such as Material UI, Reactstrap, or something like Styled-Components chosen and implemented as your technology choice (to be done and listed during your additions to the Product Canvas)
+- [ ]  Front end is pulling in some data from backend
+- [ ]  User Login/Signup Pages built and ready to handle the token being sent between backend and front end
+- [ ]  React app and Backend App talking to one another, focus on CORS issues
+
+### Tuesday
+- [ ]  80% of Front end features & UI Components, built and consuming data from the backend (Functionality over form for now)
+
+### Wednesday
+#### Most work on adding new features should be suspended at the end of the day to allow your team to focus on *quality improvement*, *user experience,* and *bug fixes*. Changes to requirements and design may occur to address quality and experience improvements.
+- [ ]  Morning standup with Trello board open
+- [ ]  Cover what has been completed in the last day and what every one is working on today.
+- [ ]  **⚠︎ *Most* features should be in place by the end of the day.  Be sure to make plenty of time to address bugs, and get your app looking like something you'd want to show off.  Focus on MVP.  Adding stretch features after today is discouraged.**
+- [ ]  100% of Front end features & UI Components, built and consuming data from the backend (Now is the time to focus on Form).
+- [ ]  Front end is pulling in all data necessary from backend, users can interact with ALL CRUD operations on the Project data.
+
+### Thursday
+- [ ]  ⚠️ REMEMBER: FOCUS ON BUGS AND POLISH TODAY
+- [ ]  Morning standup with Trello board open
+- [ ]  Cover what has been completed in the last day and what every one is working on today
+- [ ]  Complete Sprint Retro form by end of day
+- ***Strong emphasis on bug fixes and UI/UX***
+- [ ]  Document your projects within the Readme files in their Github repositories. Without having to talk to you specifically, any developer should be able to install, contribute to, and run your project based on the descriptions found in your readme
+
+### Friday
+- Morning Time before Lunch is all dedicated to polish and Demo Day prep
+    - ***There will be a sign up sheet delivered to sign up to demo in the hour long school-wide demo***
+- There will be a school wide demo held on Friday for 1 hour during the morning
+
+    [Shark Tank: Presentation Agenda for Demos (For Students)](https://www.notion.so/aafaadbe9e1448f8bbcce8afae11cf7b)
+
+    - **Students will volunteer their projects to be demoed to their TLs**
+    - Only 10 Projects will be demoed across the entire student body
+- Group wide demos will take place in your TL groups - TLs will use the project rubric to assign a score.
