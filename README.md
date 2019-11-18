@@ -1,5 +1,19 @@
-# FrontEnd
-Front-End/ React section of the Park Passport Application
+# Park Passport 
+
+### PITCH
+Local Park Passport is the definitive guide for find this best parks in your area depending on what your tastes are.
+
+### MVP
+
+- As a user I can create and login to an account
+- As a user I can add parks to the app.  Required: name, location, description.  Optional booleans: dog park, wildlife, hiking trails, disc golf, open spaces, climbing trees, etc.
+- As a guest (not logged in) I can search for parks that meet the criteria I am looking for
+- As a user I can rate parks I have visited and leave comments about it
+
+### STRETCH
+
+- As a user I can upload pictures of the park
+- As a user I can share my experience at a park on social media 
 
 
 ## Web Unit 2 MVP Requirements[Suffyan Tariq]:
