@@ -1,7 +1,7 @@
 # Park Passport 
 
 ### PITCH
-Local Park Passport is the definitive guide for find this best parks in your area depending on what your tastes are.
+Local Park Passport is the definitive guide for finding the best parks in your area, depending on what your tastes are.
 
 ### MVP
 
