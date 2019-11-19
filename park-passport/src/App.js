@@ -11,7 +11,6 @@ import AppBar from './Components/AppBar'
 function App() {
   return (
     <div className="App">
-      <div><h1>Parks Passport Application</h1></div>
       {<AppBar    />}
       {<ParkList  />}
     </div>
