@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -17,6 +17,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Amenities from './Amenities'
+import axios from 'axios'
+import Ratings from './Ratings'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -45,11 +47,21 @@ export default function ParkCard({ park }) {
   const imageLink = "https://cdn.pixabay.com/photo/2014/12/08/02/59/bench-560435_960_720.jpg";
     const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
+  const [rating, setRating]= React.useState(null)
+  useEffect(()=>{
+    axios
+    .get(`https://parks-passport.herokuapp.com/api/parks/${park.id}/ratings`)
+    .then(res=>{
+      console.log('ratings', res)
+      setRating(res.rating)
+    })
+    .catch(err=>{
+      console.log('ratings get error', err)
+    })
+  })
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <Card className={classes.card}>
       <CardHeader
@@ -83,6 +95,7 @@ export default function ParkCard({ park }) {
         <Typography variant="body2" color="textSecondary" component="p">
         {park.description}
         </Typography>
+        <Ratings rating={rating}/>
       </CardContent>
       
       {/* Ameneties */}
