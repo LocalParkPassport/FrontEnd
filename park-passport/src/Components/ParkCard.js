@@ -45,13 +45,13 @@ export default function ParkCard({ park }) {
   const imageLink = "https://cdn.pixabay.com/photo/2014/12/08/02/59/bench-560435_960_720.jpg";
     const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const [rating, setRating]= React.useState(null)
+  const [parkRate, setParkRate]= React.useState()
   useEffect(()=>{
     axios
     .get(`https://parks-passport.herokuapp.com/api/parks/${park.id}/ratings`)
     .then(res=>{
       console.log('ratings', res)
-      setRating(res.rating)
+      setParkRate(res)
     })
     .catch(err=>{
       console.log('ratings get error', err)
@@ -93,7 +93,7 @@ export default function ParkCard({ park }) {
         <Typography variant="body2" color="textSecondary" component="p">
         {park.description}
         </Typography>
-        <Ratings rating={rating}/>
+        <Ratings ratings={parkRate}/>
       </CardContent>
       
       {/* Ameneties */}

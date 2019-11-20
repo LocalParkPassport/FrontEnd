@@ -1,16 +1,14 @@
 import React from 'react'
 import StarRatings from 'react-star-ratings'
 
-export default function Ratings({rating}){
-    avg
+export default function Ratings({ratings}){
+    let avg= 0
+    ratings.map(res=>{
+        (avg+ res.rating)/ratings.length
+    })
     return(
         <div>
-            <StarRatings
-                rating={rating.rating}
-                starRatedColor="blue"
-                numberOfStars={5}
-                name='rating'
-            />
+            <h2>Ratings</h2>
         </div>
     )
 }
