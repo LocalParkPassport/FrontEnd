@@ -10,6 +10,13 @@ import Login from './Components/Login'
 import Signup from './Components/Signup';
 import NavBar from './Components/NavBar'
 import { LinearProgress } from '@material-ui/core';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee, } from '@fortawesome/free-solid-svg-icons'
+ 
+library.add(fab, faCheckSquare, faCoffee, fas)
+
 
 // Application here
 function App() {
