@@ -19,10 +19,9 @@ function App() {
         <div><h1>Parks Passport Application</h1></div>
         <NavBar/>
         {/* <Route path='/' component={HomePage}/> */}
-        <Route path='/Park-List' component={ParkList}/>
+        <Route path='/' component={ParkList}/>
         <Route path='/Login' component={Login}/>
         <Route path='/Signup' component={Signup}/>
-        <Link to='/Park-List'>View Parks</Link>
         <Link to='/Login'>Login</Link>
         <Link to='/Signup'>Signup</Link>
         {/* {<AppBar    />}

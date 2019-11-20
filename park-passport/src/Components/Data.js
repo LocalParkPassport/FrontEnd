@@ -1,4 +1,4 @@
-export const data=[
+export const Data=[
 {
     "name": "new park",
     "description": "lots of trees",

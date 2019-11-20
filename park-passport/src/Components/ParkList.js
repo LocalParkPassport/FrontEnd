@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+import ParkCard from './ParkCard';
+import { Data } from './Data';
+// console.log(Data);
 
-function ParkList(props) {
-  return (
-    <div className="App">
-      <div><h1>Parks List</h1></div>
+export default function ParkList() {
+  const [parkList, setParkList] = useState(Data);
+  console.log(Data);
+  useEffect(() => {
+      axios
+        .get("https://parks-passport.herokuapp.com/api/parks.data")
+        .then(res => {
+          console.log(res);
+          // setParkList(res);
+        })
+        .catch(err => {
+      console.error(err);
+    });
+    }, []);
   
-    </div>
-  );
+    return (
+      <section className="Park-List">
+        {parkList.map(park => {
+          return <ParkCard key={park.user_id} park={park} />;
+        })}
+      </section>
+    );
 }
-
-export default ParkList;
