@@ -11,28 +11,26 @@ import Signup from './Components/Signup';
 import NavBar from './Components/NavBar'
 import { LinearProgress } from '@material-ui/core';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faCheckSquare, faCoffee, } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  
-library.add(fab, faCheckSquare, faCoffee, fas)
+library.add( fas )
 
 
 // Application here
 function App() {
   return (
     <Router>
-      <div>
-        <div><h1>Parks Passport Application</h1></div>
+      <div className='Application'>
         <NavBar/>
-        {/* <Route path='/' component={HomePage}/> */}
-        <Route path='/' component={ParkList}/>
-        <Route path='/Login' component={Login}/>
-        <Route path='/Signup' component={Signup}/>
+        <div className='searchnadd'>
+          <FontAwesomeIcon icon={['fas', 'plus-circle']} size="lg"/>
+        </div>
+        <Route exact path='/' component={ParkList}/>
+        <Route exact path='/Login' component={Login}/>
+        <Route exact path='/Signup' component={Signup}/>
         <Link to='/Login'>Login</Link>
         <Link to='/Signup'>Signup</Link>
-        {/* {<AppBar    />}
-        {<ParkList  />} */}
       </div>
     </Router>
   );

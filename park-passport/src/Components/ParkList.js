@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import ParkCard from './ParkCard';
+import './parklist.css'
 import { Data } from './Data';
 // console.log(Data);
 
@@ -20,7 +21,7 @@ export default function ParkList() {
     }, []);
   
     return (
-      <section className="Park-List">
+      <section className="ParkList">
         {parkList.map(park => {
           return <ParkCard key={park.user_id} park={park} />;
         })}

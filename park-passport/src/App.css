@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -19,4 +19,20 @@
 
 .App-link {
   color: #09d3ac;
+} */
+
+.Application{
+  background-color: cornsilk;
+}
+
+.NavBar{
+  background-color: #445c3c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow:  #445c3c 0px 10px ;
+}
+
+.NavBar img{
+  height: 60px;
 }

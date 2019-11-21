@@ -63,33 +63,28 @@ export default function ParkCard({ park }) {
     setExpanded(!expanded);
   };
   return (
-    <Card className={classes.card}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+    <div className= 'ParkCard'>
+      <Card className={classes.card}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="recipe" className={classes.avatar}>
+              R
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
 
-        // Park Name
-        title= {park.name}
+          // Park Name
+          title= {park.name}
 
-        //  Park Location
-        subheader= {park.location}
-      />
 
-      {/* Image Section */}
-      <CardMedia
-        className={classes.media}
-        image= {imageLink} 
-        title= {park.name}
-      />
-
+          //  Park Location
+          subheader= {park.location}
+        />
+    
       {/* Park Desctiption */}
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -101,24 +96,43 @@ export default function ParkCard({ park }) {
       {/* Ameneties */}
         <Amenities park={park}/>
 
-        <CardActions>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
 
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        {/* Image Section */}
+        <CardMedia
+          className={classes.media}
+          image= {imageLink} 
+          title= {park.name}
+        />
+
+        {/* Park Desctiption */}
         <CardContent>
-          Comments Go here
+          <Typography variant="body2" color="textSecondary" component="p">
+          {park.description}
+          </Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        
+        {/* Ameneties */}
+          <Amenities park={park}/>
+
+          <CardActions>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            Comments Go here
+          </CardContent>
+        </Collapse>
+      </Card>
+    </div>
   );
 }
