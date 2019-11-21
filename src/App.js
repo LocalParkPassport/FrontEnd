@@ -14,6 +14,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CreatePark from './Components/CreatePark';
+import CreateRating from './Components/CreateRating';
  
 library.add( fas )
 
@@ -30,6 +31,7 @@ function App() {
         <Link to='/Login'>Login</Link>
         <Link to='/Signup'>Signup</Link>
         <Link to='/create'>Create Park</Link>
+        <CreateRating />
         <Route exact path='/create' component={CreatePark} />
         <Route exact path='/' component={ParkList} />
         <Route exact path='/Login' render={(props) => (<Login {...props} />)} />
