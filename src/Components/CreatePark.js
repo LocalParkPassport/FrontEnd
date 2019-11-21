@@ -50,28 +50,32 @@ const CreatePark = (props) => {
                 <input onChange={handleChange} type="text" placeholder="description" name="description" value={inputs.description} />
                 <input onChange={handleChange} type="text" placeholder="location" name="location" value={inputs.location} />
                 <label>
-                    Wildlife
+                    Fishing?
                 <input onChange={handleChange} type="radio" name="fishing" value={inputs.fishing} />
                 </label>
                 <label>
-                    Dog Park?
+                    Camping?
                     <input onChange={handleChange} type="radio" name="camping" value={inputs.camping} />
                 </label>
                 <label>
-                    Hiking trails?
+                    Tennis?
                     <input onChange={handleChange} type="radio" name="tennis" value={inputs.tennis} />
                 </label>
                 <label>
-                    Disc golf?
+                    Basketball?
                     <input onChange={handleChange} type="radio" name="basketball" value={inputs.basketball} />
                 </label>
                 <label>
-                    Open spaces?
+                    Golf?
                     <input onChange={handleChange} type="radio" name="golf" value={inputs.golf} />
                 </label>
                 <label>
-                    Climbing trees?
+                    Dog Park?
                     <input onChange={handleChange} type="radio" name="dogPark" value={inputs.dogPark} />
+                </label>
+                <label>
+                    Park Image?
+                    <input onChange={handleChange} type="text" name="img" value={inputs.img} />
                 </label>
                 <button type="submit">Submit</button>
             </form>
