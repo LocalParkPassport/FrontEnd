@@ -32,8 +32,8 @@ function App() {
         <Link to='/create'>Create Park</Link>
         <Route exact path='/create' component={CreatePark} />
         <Route exact path='/' component={ParkList} />
-        <Route exact path='/Login' component={Login} />
-        <Route exact path='/Signup' component={Signup} />
+        <Route exact path='/Login' render={(props) => (<Login {...props} />)} />
+        <Route exact path='/Signup' render={(props) => (<Signup {...props} />)} />
       </div>
     </Router>
   );

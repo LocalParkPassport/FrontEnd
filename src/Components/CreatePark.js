@@ -46,9 +46,9 @@ const CreatePark = (props) => {
         <div>
             <h1>Create a Park Form</h1>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type="text" placeholder="Name" name="name" value={inputs.name} />
-                <input onChange={handleChange} type="text" placeholder="description" name="description" value={inputs.description} />
-                <input onChange={handleChange} type="text" placeholder="location" name="location" value={inputs.location} />
+                <input onChange={handleChange} type="text" placeholder="Name" name="name" value={inputs.name} required />
+                <input onChange={handleChange} type="text" placeholder="description" name="description" value={inputs.description} required />
+                <input onChange={handleChange} type="text" placeholder="location" name="location" value={inputs.location} required />
                 <label>
                     Fishing?
                 <input onChange={handleChange} type="radio" name="fishing" value={inputs.fishing} />
