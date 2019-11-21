@@ -1,11 +1,12 @@
-import React from 'react'
-import Icon from '../Images/icon.png'
+import React from 'react';
+import { Link, Route } from 'react-router-dom';
+import Icon from '../Images/icon.png';
 
 
 
-const NavBar= ()=>{
+const NavBar = () => {
     let NavLinks;
-    const signOut= ()=>{
+    const signOut = () => {
         localStorage.clear()
         window.location.href='/'
     }
