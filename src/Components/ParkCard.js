@@ -18,7 +18,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Amenities from './Amenities'
 import axios from 'axios'
-import Ratings from './Ratings'
+// import Ratings from './Ratings'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -90,7 +90,7 @@ export default function ParkCard({ park }) {
         <Typography variant="body2" color="textSecondary" component="p">
         {park.description}
         </Typography>
-        <Ratings ratings={parkRate}/>
+        {/* <Ratings ratings={parkRate}/> */}
       </CardContent>
       
       {/* Ameneties */}
