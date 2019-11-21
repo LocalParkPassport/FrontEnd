@@ -85,18 +85,6 @@ export default function ParkCard({ park }) {
           subheader= {park.location}
         />
     
-      {/* Park Desctiption */}
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-        {park.description}
-        </Typography>
-        {/* <Ratings ratings={parkRate}/> */}
-      </CardContent>
-      
-      {/* Ameneties */}
-        <Amenities park={park}/>
-
-
         {/* Image Section */}
         <CardMedia
           className={classes.media}
@@ -113,6 +101,11 @@ export default function ParkCard({ park }) {
         
         {/* Ameneties */}
           <Amenities park={park}/>
+
+
+        {/* Ratings */}
+        {/* <Ratings ratings={parkRate}/> */}
+
 
           <CardActions>
           <IconButton
