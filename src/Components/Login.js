@@ -2,14 +2,14 @@ import React from 'react'
 import axios from 'axios'
 import TextField from '@material-ui/core'
 
-class Login extends React.Component{
+class Login extends React.Component {
     state={
         credentials:{
             username: '',
             password: ''
         }
     }
-    submitForm= e=>{
+    submitForm= e => {
         e.preventDefault()
         axios
         .post('https://parks-passport.herokuapp.com/api/auth/login', this.state.credentials)
@@ -18,6 +18,7 @@ class Login extends React.Component{
             localStorage.setItem('user_id', res.data.user_id);
             console.log(res)
         })
+        .then( res => this.props.history.push('/'))
         .catch(err=>{
             console.log('login error', err)
         })

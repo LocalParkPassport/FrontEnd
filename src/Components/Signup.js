@@ -8,7 +8,7 @@ class Signup extends React.Component{
             password: ''
         }
     }
-    submitForm= e=>{
+    submitForm= e => {
         e.preventDefault()
         axios
         .post('https://parks-passport.herokuapp.com/api/auth/register', this.state.credentials)
@@ -16,11 +16,12 @@ class Signup extends React.Component{
             localStorage.setItem('token', res.data.token)
             console.log(res)
         })
-        .catch(err=>{
+        .then(res => this.props.history.push('/Login'))
+        .catch(err => {
             console.log('login error', err)
         })
     }
-    handleChanges= e=>{
+    handleChanges = e => {
         this.setState({
             credentials:{
                 ...this.state.credentials,
