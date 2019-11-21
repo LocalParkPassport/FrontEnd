@@ -1,4 +1,7 @@
 import React from 'react'
+import Icon from '../Images/icon.png'
+
+
 
 const NavBar= ()=>{
     let NavLinks;
@@ -21,7 +24,10 @@ const NavBar= ()=>{
         )
     }
     return(
-        <div>
+        <div className='NavBar'>
+            <div className='logo'>
+            <img src={Icon} />
+            </div>
             {NavLinks}
         </div>
     )

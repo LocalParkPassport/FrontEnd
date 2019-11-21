@@ -1,36 +1,37 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import './ameneties.css'
 
 export default function Amenities( {park} ) {
     
     return (
         <section className="Amenities">
             
-            {/* Wildlife */}
-            {park.wildlife === true ? <FontAwesomeIcon icon={['fas', 'hippo']} /> : <div> No Wildlife</div> }
+            {/* Restrooms */}
+            {park.restrooms === true ? <div className="Restroom"> <FontAwesomeIcon icon={['fas', 'restroom']}/> </div>  : null }
 
             {/* Dog Park */}
-            {park.dog-park === true ? <FontAwesomeIcon icon={['fas', 'dog']} /> : <div> No Wildlife</div> }
-
-            {/* Hiking */}
-            {park.hiking_trails === true ? <FontAwesomeIcon icon={['fas', 'hiking']} /> : <div> No Wildlife</div> }
+            {park.dogPark === true ? <div className="DogPark"><FontAwesomeIcon icon={['fas', 'dog']} /> </div>: null }
+            
+            {/* Basket Ball */}
+            {park.basketball === true ? <div className="DogPark"> <FontAwesomeIcon icon={['fas', 'basketball-ball']} /> </div>: null }
 
             {/* Golf */}
-            {park.disc_golf === true ? <FontAwesomeIcon icon={['fas', 'golf-ball']} /> : <div> No Wildlife</div> }
+            {park.golf === true ? <div className="DogPark"> <FontAwesomeIcon icon={['fas', 'golf-ball']} /> </div>: null }
 
-            {/* Open Spaces */}
-            {park.disc_golf === true ? <FontAwesomeIcon icon={['fas', 'golf-ball']} /> : <div> No Wildlife</div> }
+            {/* Fishing */}
+            {park.fishing === true ? <div className="DogPark"> <FontAwesomeIcon icon={['fas', 'fish']} /> </div>: null }
 
-            {/* Climbing Trees */}
-            {park.disc_golf === true ? <FontAwesomeIcon icon={['fas', 'tree']} /> : <div> No Wildlife</div> }
+            {/* Camping */}
+            {park.camping === true ? <div className="DogPark"> <FontAwesomeIcon icon={['fas', 'campground']} /> </div>: null }
         </section>
     );
   }
 
-//   "wildlife": true,
-//   "dog_park": true,
-//   "hiking_trails": true,
-//   "disc_golf": true,
-//   "open_spaces": true,
-//   "climbing trees": false,
+// restrooms
+// dogPark
+// basketball
+// golf
+// fishing
+// camping
+

@@ -1,0 +1,14 @@
+.ParkList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.ParkCard{
+    padding: 10px;
+}
+
+.MuiCard-root{
+    background-color: #c9d99e;
+}
