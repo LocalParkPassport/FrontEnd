@@ -9,32 +9,36 @@ const CreatePark = (props) => {
         name: '',
         description: '',
         location: '',
-        wildlife: false,
-        dog_park: false,
-        hiking_trail: false,
-        disc_golf: false,
-        open_spaces: false,
-        climbing_trees: false,
-        rating: 0
+        restrooms: false,
+        fishing: false,
+        camping: false,
+        tennis: false,
+        basketball: false,
+        golf: false,
+        dogPark: false,
+        img: '',
+        user_id: localStorage.getItem('user_id')
 
     });
 
     const handleChange = e => {
         e.persist();
-        setInputs(inputs => ({ ...inputs, [e.target.name]: e.target.value }))
+        let id = localStorage.getItem('user_id');
+        console.log(id);
+        setInputs(inputs => ({ ...inputs, user_id: localStorage.getItem('user_id'), [e.target.name]: e.target.value }));
         console.log(e.target.value);
     }
 
     const handleSubmit = e => {
         e.preventDefault();
+        console.log(inputs);
         AxiosWithAuth()
-            .post('https://parks-passport.herokuapp.com/api/parks', inputs)
+            .post(`https://parks-passport.herokuapp.com/api/parks`, inputs)
             .then(res => {
                 console.log(res);
             })
             .catch(err => {
                 console.log("an error occured...", err.message);
-                console.log(props);
             })
     };
 
@@ -42,32 +46,32 @@ const CreatePark = (props) => {
         <div>
             <h1>Create a Park Form</h1>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type="text" placeholder="Name" name="name" value={inputs.nameInput} />
+                <input onChange={handleChange} type="text" placeholder="Name" name="name" value={inputs.name} />
                 <input onChange={handleChange} type="text" placeholder="description" name="description" value={inputs.description} />
                 <input onChange={handleChange} type="text" placeholder="location" name="location" value={inputs.location} />
                 <label>
                     Wildlife
-                <input onChange={handleChange} type="radio" name="wildlife" value={inputs.wildlife} />
+                <input onChange={handleChange} type="radio" name="fishing" value={inputs.fishing} />
                 </label>
                 <label>
                     Dog Park?
-                    <input onChange={handleChange} type="radio" name="dog_park" value={inputs.dog_park} />
+                    <input onChange={handleChange} type="radio" name="camping" value={inputs.camping} />
                 </label>
                 <label>
                     Hiking trails?
-                    <input onChange={handleChange} type="radio" name="hiking_trail" value={inputs.hiking_trail} />
+                    <input onChange={handleChange} type="radio" name="tennis" value={inputs.tennis} />
                 </label>
                 <label>
                     Disc golf?
-                    <input onChange={handleChange} type="radio" name="disc_golf" value={inputs.disc_golf} />
+                    <input onChange={handleChange} type="radio" name="basketball" value={inputs.basketball} />
                 </label>
                 <label>
                     Open spaces?
-                    <input onChange={handleChange} type="radio" name="open_spaces" value={inputs.open_spaces} />
+                    <input onChange={handleChange} type="radio" name="golf" value={inputs.golf} />
                 </label>
                 <label>
                     Climbing trees?
-                    <input onChange={handleChange} type="radio" name="climbing_trees" value={inputs.climbing_trees} />
+                    <input onChange={handleChange} type="radio" name="dogPark" value={inputs.dogPark} />
                 </label>
                 <button type="submit">Submit</button>
             </form>
