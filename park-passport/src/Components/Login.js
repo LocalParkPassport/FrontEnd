@@ -14,7 +14,8 @@ class Login extends React.Component{
         axios
         .post('https://parks-passport.herokuapp.com/api/auth/login', this.state.credentials)
         .then(res=>{
-            localStorage.setItem('token', res.data.token)
+            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('user_id', res.data.user_id);
             console.log(res)
         })
         .catch(err=>{
