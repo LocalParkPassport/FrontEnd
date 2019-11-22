@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { AxiosWithAuth } from '../AxiosWithAuth';
 
-const CreateRating = (park) => {
-
+const CreateRating = ({park}) => {
+    console.log(park);
     const [inputs, setInputs] = useState({
         rating: '',
         comments: ''

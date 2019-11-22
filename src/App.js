@@ -1,8 +1,8 @@
+// Router 
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 // Import Libraries here
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route, Switch, Link } from "react-router-dom";
 // Import Components here
 import ParkList from './Components/ParkList'
 import AppBar from './Components/AppBar'
@@ -14,25 +14,27 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import CreatePark from './Components/CreatePark';
 import CreateRating from './Components/CreateRating';
- 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 library.add( fas )
 
 
 // Application here
 function App() {
+  // {/* https://frontend-mlk73awwy.now.sh/login */}
+  // {/* https://frontend-mlk73awwy.now.sh/Login */} 
   return (
-    <Router>
-      <div className='Application'>
-        <NavBar/>
-        <Link to='/Login'>Login</Link>
-        <Link to='/Signup'>Signup</Link>
-        <Link to='/create'>Create Park</Link>
-        <Route exact path='/create' component={CreatePark} />
-        <Route exact path='/' component={ParkList} />
-        <Route exact path='/Login' render={(props) => (<Login {...props} />)} />
-        <Route exact path='/Signup' render={(props) => (<Signup {...props} />)} />
+    <div className='Application'> 
+        <Router>
+          <Switch>
+            <Route exact path='/' component={ParkList} />
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/create' component={CreatePark} />
+          </Switch>
+        </Router>
+
+        
       </div>
-    </Router>
   );
 }
 

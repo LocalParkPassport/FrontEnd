@@ -1,35 +1,35 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Icon from '../Images/icon.png';
+import "./navbar.css"
+ 
 
 
-
-const NavBar = () => {
-    let NavLinks;
+function NavBar() {
     const signOut = () => {
         localStorage.clear()
         window.location.href='/'
-    }
-    if(localStorage.getItem('token')){
-        NavLinks=(
-            <div>
-                <button onClick={signOut}>Sign Out</button>
-            </div>
-        )
-    }else{
-        NavLinks=(
-            <div>
-                <button>Sign Up</button>
-                <button>Log In</button>
-            </div>
-        )
-    }
-    return(
+    } 
+    return (
         <div className='NavBar'>
             <div className='logo'>
             <img src={Icon} />
             </div>
-            {NavLinks}
+            <div>
+                {
+                    localStorage.getItem('token') ?
+                    <div>
+                      <button onClick={signOut}>Sign Out</button>
+                    </div>   
+                    : 
+                    (
+                    <div id="nav__contain">
+                        <a href='/login'>Sign in</a>
+                        <a href='/signup'>Sign up</a> 
+                    </div>
+                    )
+                }
+            </div>
         </div>
     )
 }
