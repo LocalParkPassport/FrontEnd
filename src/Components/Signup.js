@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import NavBar from './NavBar'
+
 // import { Formik, Form, Field } from 'formik';
 // import * as Yup from 'yup';
 
@@ -46,6 +48,7 @@ class Signup extends React.Component{
     render(){
         return(
             <>
+            <NavBar />
             <form onSubmit={this.submitForm}>
                  <input
                     type= 'text'

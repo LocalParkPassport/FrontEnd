@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AxiosWithAuth } from '../AxiosWithAuth';
 import axios from 'axios';
+import NavBar from './NavBar'
 
 
 const CreatePark = (props) => {
@@ -61,6 +62,7 @@ const CreatePark = (props) => {
 
     return (
         <div>
+            <NavBar />
             <h1>Create a Park Form</h1>
             <form onSubmit={handleSubmit}>
                 <input onChange={handleChange} type="text" placeholder="Name" name="name" value={inputs.name} required />
