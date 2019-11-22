@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AxiosWithAuth } from '../AxiosWithAuth';
 
-const CreateRating = (props) => {
+const CreateRating = (park) => {
 
     const [inputs, setInputs] = useState({
         rating: '',
@@ -16,7 +16,7 @@ const CreateRating = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         AxiosWithAuth()
-            .post('https://parks-passport.herokuapp.com/api/parks/5/ratings', inputs)
+            .post(`https://parks-passport.herokuapp.com/api/parks/${park.id}/ratings`, inputs)
         .then(res => {
             console.log(res);
         })

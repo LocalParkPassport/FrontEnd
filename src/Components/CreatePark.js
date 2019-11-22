@@ -4,11 +4,7 @@ import axios from 'axios';
 
 
 const CreatePark = (props) => {
-
-    const [inputs, setInputs] = useState({
-        name: '',
-        description: '',
-        location: '',
+    const [check, setCheck] = useState({
         restrooms: false,
         fishing: false,
         camping: false,
@@ -16,17 +12,37 @@ const CreatePark = (props) => {
         basketball: false,
         golf: false,
         dogPark: false,
+    });
+
+    const [inputs, setInputs] = useState({
+        name: '',
+        description: '',
+        location: '',
+        // restrooms: false,
+        // fishing: false,
+        // camping: false,
+        // tennis: false,
+        // basketball: false,
+        // golf: false,
+        // dogPark: false,
         img: '',
         user_id: localStorage.getItem('user_id')
 
     });
+    // console.log(inputs);
 
     const handleChange = e => {
         e.persist();
         let id = localStorage.getItem('user_id');
         console.log(id);
         setInputs(inputs => ({ ...inputs, user_id: localStorage.getItem('user_id'), [e.target.name]: e.target.value }));
+        // setRadio(inputs => ({ ...inputs, !radio}));
         console.log(e.target.value);
+    }
+
+    const handleCheck = e => {
+        console.log(e.target.value)
+        setCheck({...check, [e.target.name]: e.target.value});
     }
 
     const handleSubmit = e => {
@@ -51,27 +67,27 @@ const CreatePark = (props) => {
                 <input onChange={handleChange} type="text" placeholder="location" name="location" value={inputs.location} required />
                 <label>
                     Fishing?
-                <input onChange={handleChange} type="radio" name="fishing" value={inputs.fishing} />
+                <input onChange={handleChange} type="checkbox" name="fishing" value={inputs.fishing} />
                 </label>
                 <label>
                     Camping?
-                    <input onChange={handleChange} type="radio" name="camping" value={inputs.camping} />
+                    <input onClick={handleCheck} type="checkbox" name="camping" value={!check.camping} />
                 </label>
                 <label>
                     Tennis?
-                    <input onChange={handleChange} type="radio" name="tennis" value={inputs.tennis} />
+                    <input onChange={handleChange} type="checkbox" name="tennis" value={inputs.tennis} />
                 </label>
                 <label>
                     Basketball?
-                    <input onChange={handleChange} type="radio" name="basketball" value={inputs.basketball} />
+                    <input onChange={handleChange} type="checkbox" name="basketball" value={inputs.basketball} />
                 </label>
                 <label>
                     Golf?
-                    <input onChange={handleChange} type="radio" name="golf" value={inputs.golf} />
+                    <input onChange={handleChange} type="checkbox" name="golf" value={inputs.golf} />
                 </label>
                 <label>
                     Dog Park?
-                    <input onChange={handleChange} type="radio" name="dogPark" value={inputs.dogPark} />
+                    <input onChange={handleChange} type="checkbox" name="dogPark" value={inputs.dogPark} />
                 </label>
                 <label>
                     Park Image?
