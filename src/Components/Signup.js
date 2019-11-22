@@ -1,5 +1,18 @@
 import React from 'react'
 import axios from 'axios'
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+
+const SignupSchema = Yup.object().shape({
+    username: Yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+    password: Yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+  });
 
 class Signup extends React.Component{
     state={
@@ -32,6 +45,41 @@ class Signup extends React.Component{
     }
     render(){
         return(
+            <>
+            <Formik>
+                initialValues={{
+                    username: '',
+                    password: '',
+                }}
+                validationSchema={SignupSchema}
+                onSubmit={e => {
+                    // same shape as initial values
+                    e.preventDefault()
+                    axios
+                    .post('https://parks-passport.herokuapp.com/api/auth/register', e)
+                    .then(res=>{
+                        localStorage.setItem('token', res.data.token)
+                        console.log(res)
+                    })
+                    .then(res => this.props.history.push('/Login'))
+                    .catch(err => {
+                        console.log('login error', err)
+                    })
+                }}
+                {({ errors, touched }) => (
+                    <Form>
+                        <Field name="username" />
+                        {errors.username && touched.username ? (
+                        <div>{errors.username}</div>
+                        ) : null}
+                        <Field name="password" />
+                        {errors.password && touched.password ? (
+                        <div>{errors.password}</div>
+                        ) : null}
+                        <button type="submit">Submit</button>
+                    </Form>
+                )}
+            </Formik>
             <form onSubmit={this.submitForm}>
                  <input
                     type= 'text'
@@ -49,6 +97,7 @@ class Signup extends React.Component{
                 />
                 <button>Sign Up!</button>
             </form>
+            </>
         )
     }
 }

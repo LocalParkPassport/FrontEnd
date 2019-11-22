@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -18,7 +18,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Amenities from './Amenities'
 import axios from 'axios'
-// import Ratings from './Ratings'
+import Ratings from './Ratings'
+import CreateRating from './CreateRating'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -44,21 +45,56 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ParkCard({ park }) {
-  const imageLink = "https://cdn.pixabay.com/photo/2014/12/08/02/59/bench-560435_960_720.jpg";
-    const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-  const [parkRate, setParkRate]= React.useState()
-  useEffect(()=>{
-    axios
-    .get(`https://parks-passport.herokuapp.com/api/parks/${park.id}/ratings`)
-    .then(res=>{
-      console.log('ratings', res)
-      setParkRate(res)
+  const classes = useStyles();
+  const [expanded, setExpanded] = useState(false);
+  const [idData, setIdData] = useState({
+    arr: []
+  });
+
+  
+
+  useEffect(async () => { 
+    let getData = await axios.get(`https://parks-passport.herokuapp.com/api/parks/${park.id}/ratings`)
+    .then(res => { 
+      setIdData({
+        ...idData,
+        arr: res.data
+      }) 
     })
-    .catch(err=>{
-      console.log('ratings get error', err)
-    })
-  })
+    .catch(err => console.log(err))
+  }, [])
+  
+  
+  // useEffect(() => { 
+  //   console.log(idData.arr)
+  // }, [idData.arr])
+
+  let testData = [{
+    comments: "This is an example comment",
+    id: 1,
+    park_id: 5,
+    rating: 3,
+    user_id: null
+  }, {
+    comments: "This is an example comment",
+    id: 1,
+    park_id: 5,
+    rating: 3,
+    user_id: null
+  }]
+
+
+  // let handleDelete = id => {
+  //   axios 
+  //   .delete(`https://parks-passport.herokuapp.com/api/parks/${id}`)
+  //   .then(res => {
+  //     console.log(res);
+  //   })
+  //   .catch(err => {
+  //     console.log("An error has occured", err)
+  //   })
+  // };
+  
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -88,7 +124,7 @@ export default function ParkCard({ park }) {
         {/* Image Section */}
         <CardMedia
           className={classes.media}
-          image= {imageLink} 
+          image= {park.img} 
           title= {park.name}
         />
 
@@ -104,7 +140,7 @@ export default function ParkCard({ park }) {
 
 
         {/* Ratings */}
-        {/* <Ratings ratings={parkRate}/> */}
+        {/* <Ratings ratings={idData.arr}/>  */}
 
 
           <CardActions>
@@ -122,7 +158,9 @@ export default function ParkCard({ park }) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            Comments Go here
+                    {/* Ratings */}
+                    <Ratings ratings={idData.arr}/> 
+            <CreateRating park={park}/>
           </CardContent>
         </Collapse>
       </Card>
