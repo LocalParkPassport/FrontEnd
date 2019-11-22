@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import TextField from '@material-ui/core'
+import NavBar from './NavBar'
 
 class Login extends React.Component {
     state={
@@ -34,23 +35,26 @@ class Login extends React.Component {
     }
     render(){
         return(
-            <form onSubmit={this.submitForm}>
-                <input
-                    type= 'text'
-                    name= 'username'
-                    placeholder= 'Username'
-                    value= {this.state.credentials.username}
-                    onChange= {this.handleChanges}
-                />
-                <input
-                    type= 'password'
-                    name= 'password'
-                    placeholder= 'Password'
-                    value= {this.state.credentials.password}
-                    onChange= {this.handleChanges}
-                />
-                <button>Login</button>
-            </form>
+            <div>
+                <NavBar />
+                <form onSubmit={this.submitForm}>
+                    <input
+                        type= 'text'
+                        name= 'username'
+                        placeholder= 'Username'
+                        value= {this.state.credentials.username}
+                        onChange= {this.handleChanges}
+                    />
+                    <input
+                        type= 'password'
+                        name= 'password'
+                        placeholder= 'Password'
+                        value= {this.state.credentials.password}
+                        onChange= {this.handleChanges}
+                    />
+                    <button>Login</button>
+                </form>
+            </div>
         )
     }
 }

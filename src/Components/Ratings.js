@@ -47,23 +47,21 @@ function Ratings(props) {
     return (
         <div>
             {props.ratings.map(rate => (
-                <div>
-                    <h3>Rating: {rate.rating}</h3>
-                    <h4>Comments: {rate.comments}</h4>
-    <Card className={classes.card}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          User Comment
-        </Typography>
-        <Typography variant="h5" component="h2">
-        {rate.comments}
-        </Typography>
-      </CardContent>
-      <Box component="fieldset" mb={3} borderColor="transparent">
-        {/* <Typography component="legend">Disabled</Typography> */}
-        <Rating name="disabled" value={rate.rating} disabled />
-      </Box>
-    </Card>
+                <div className='commentcard'>
+                    <Card className={classes.card}>
+                    <CardContent>
+                        <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        User Comment
+                        </Typography>
+                        <Typography variant="h5" component="h2">
+                        {rate.comments}
+                        </Typography>
+                    </CardContent>
+                    <Box component="fieldset" mb={3} borderColor="transparent">
+                        {/* <Typography component="legend">Disabled</Typography> */}
+                        <Rating name="disabled" value={rate.rating} disabled />
+                    </Box>
+                    </Card>
                 </div>
     ))}
         </div>
