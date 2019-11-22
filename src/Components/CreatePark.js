@@ -4,27 +4,28 @@ import axios from 'axios';
 
 
 const CreatePark = (props) => {
-    const [check, setCheck] = useState({
-        restrooms: false,
-        fishing: false,
-        camping: false,
-        tennis: false,
-        basketball: false,
-        golf: false,
-        dogPark: false,
-    });
+    // const [check, setCheck] = useState({
+    //     restrooms: false,
+    //     fishing: false,
+    //     camping: false,
+    //     tennis: false,
+    //     basketball: false,
+    //     golf: false,
+    //     dogPark: false,
+    //     user_id: localStorage.getItem('user_id')
+    // });
 
     const [inputs, setInputs] = useState({
         name: '',
         description: '',
         location: '',
-        // restrooms: false,
-        // fishing: false,
-        // camping: false,
-        // tennis: false,
-        // basketball: false,
-        // golf: false,
-        // dogPark: false,
+        restrooms: true,
+        fishing: true,
+        camping: true,
+        tennis: true,
+        basketball: true,
+        golf: true,
+        dogPark: true,
         img: '',
         user_id: localStorage.getItem('user_id')
 
@@ -36,14 +37,14 @@ const CreatePark = (props) => {
         let id = localStorage.getItem('user_id');
         console.log(id);
         setInputs(inputs => ({ ...inputs, user_id: localStorage.getItem('user_id'), [e.target.name]: e.target.value }));
-        // setRadio(inputs => ({ ...inputs, !radio}));
+        // setCheck(check => ({ ...check, user_id: localStorage.getItem('user_id'), [e.target.name]: e.target.value }));
         console.log(e.target.value);
     }
 
-    const handleCheck = e => {
-        console.log(e.target.value)
-        setCheck({...check, [e.target.name]: e.target.value});
-    }
+    // const handleCheck = e => {
+    //     console.log(e.target.value)
+    //     setCheck({ ...check, user_id: localStorage.getItem('user_id'), [e.target.name]: e.target.value});
+    // }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -71,23 +72,23 @@ const CreatePark = (props) => {
                 </label>
                 <label>
                     Camping?
-                    <input onClick={handleCheck} type="checkbox" name="camping" value={!check.camping} />
+                    <input onClick={handleChange} type="checkbox" name="camping" value={inputs.camping} />
                 </label>
                 <label>
                     Tennis?
-                    <input onChange={handleChange} type="checkbox" name="tennis" value={inputs.tennis} />
+                    <input onClick={handleChange} type="checkbox" name="tennis" value={inputs.tennis} />
                 </label>
                 <label>
                     Basketball?
-                    <input onChange={handleChange} type="checkbox" name="basketball" value={inputs.basketball} />
+                    <input onClick={handleChange} type="checkbox" name="basketball" value={inputs.basketball} />
                 </label>
                 <label>
                     Golf?
-                    <input onChange={handleChange} type="checkbox" name="golf" value={inputs.golf} />
+                    <input onClick={handleChange} type="checkbox" name="golf" value={inputs.golf} />
                 </label>
                 <label>
                     Dog Park?
-                    <input onChange={handleChange} type="checkbox" name="dogPark" value={inputs.dogPark} />
+                    <input onClick={handleChange} type="checkbox" name="dogPark" value={inputs.dogPark} />
                 </label>
                 <label>
                     Park Image?

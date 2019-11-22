@@ -20,6 +20,7 @@ import Amenities from './Amenities'
 import axios from 'axios'
 import Ratings from './Ratings'
 import CreateRating from './CreateRating'
+// import DeletePark from './DeletePark';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -64,7 +65,16 @@ export default function ParkCard({ park }) {
     .catch(err => console.log(err))
   }, [])
   
-  
+  const handleDelete = id => {
+    axios
+      .delete(`https://parks-passport.herokuapp.com/api/parks/${park.id}`)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log("An error has occured", err)
+      })
+  };
   // useEffect(() => { 
   //   console.log(idData.arr)
   // }, [idData.arr])
@@ -84,16 +94,7 @@ export default function ParkCard({ park }) {
   }]
 
 
-  // let handleDelete = id => {
-  //   axios 
-  //   .delete(`https://parks-passport.herokuapp.com/api/parks/${id}`)
-  //   .then(res => {
-  //     console.log(res);
-  //   })
-  //   .catch(err => {
-  //     console.log("An error has occured", err)
-  //   })
-  // };
+ 
   
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -121,6 +122,10 @@ export default function ParkCard({ park }) {
           subheader= {park.location}
         />
     
+      {/* <DeletePark park={park}/> */}
+      <button onClick={handleDelete}>Delete Park</button>
+
+
         {/* Image Section */}
         <CardMedia
           className={classes.media}
@@ -158,9 +163,10 @@ export default function ParkCard({ park }) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-                    {/* Ratings */}
+                    {/* Display Ratings */}
                     <Ratings ratings={idData.arr}/> 
-            <CreateRating park={park}/>
+                    {/* Add Ratings */}
+                    <CreateRating park={park}/>
           </CardContent>
         </Collapse>
       </Card>

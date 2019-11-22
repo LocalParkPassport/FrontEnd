@@ -11,4 +11,5 @@
 
 .MuiCard-root{
     background-color: #c9d99e;
+    min-height: 100vh;
 }

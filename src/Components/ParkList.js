@@ -5,6 +5,7 @@ import './parklist.css'
 import { Data } from './Data';
 // console.log(Data);
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import NavBar from './NavBar.js'
 
 
 export default function ParkList() {
@@ -28,9 +29,12 @@ export default function ParkList() {
   
     return (
       <div>
-      <section className='searchandadd'>
-        <FontAwesomeIcon icon={['fas', 'plus-circle']} size="3x"/>
-      </section>
+      <NavBar />
+      { window.location.pathname !== '/create' &&
+        <a id="create-btn" href='/create'>
+          <FontAwesomeIcon icon={['fas', 'plus-circle']} size="3x"/>
+        </a>
+      }
       <section className="ParkList">
         {parkList.map(park => {
           return <ParkCard key={park.user_id} park={park} />;
