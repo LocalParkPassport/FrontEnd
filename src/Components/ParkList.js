@@ -77,7 +77,7 @@ export default function ParkList() {
     return (
       <div>
       <NavBar />
-      { window.location.pathname !== '/create' &&
+      { (window.location.pathname !== '/create' &&  localStorage.getItem('token')) &&
         <a id="create-btn" href='/create'>
           <FontAwesomeIcon icon={['fas', 'plus-circle']} size="3x"/>
         </a>

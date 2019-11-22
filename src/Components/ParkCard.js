@@ -122,8 +122,11 @@ export default function ParkCard({ park }) {
           subheader= {park.location}
         />
     
-      {/* <DeletePark park={park}/> */}
+
+
+      { localStorage.getItem('token') &&
       <button onClick={handleDelete}>Delete Park</button>
+      }
 
 
         {/* Image Section */}
@@ -165,8 +168,10 @@ export default function ParkCard({ park }) {
           <CardContent>
                     {/* Display Ratings */}
                     <Ratings ratings={idData.arr}/> 
-                    {/* Add Ratings */}
-                    <CreateRating park={park}/>
+                    { localStorage.getItem('token') &&
+                      // {/* Add Ratings */}
+                      <CreateRating park={park}/>
+                    }
           </CardContent>
         </Collapse>
       </Card>
