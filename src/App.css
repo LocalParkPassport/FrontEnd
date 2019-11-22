@@ -30,6 +30,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
   box-shadow:  #445c3c 0px 10px ;
 }
 

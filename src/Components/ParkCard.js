@@ -52,6 +52,14 @@ export default function ParkCard({ park }) {
     arr: []
   });
 
+
+// Lock Feature
+/*
+      { localStorage.getItem('token') &&
+        
+      }
+*/ 
+
   
 
   useEffect(async () => { 
@@ -79,20 +87,22 @@ export default function ParkCard({ park }) {
   //   console.log(idData.arr)
   // }, [idData.arr])
 
-  let testData = [{
-    comments: "This is an example comment",
-    id: 1,
-    park_id: 5,
-    rating: 3,
-    user_id: null
-  }, {
-    comments: "This is an example comment",
-    id: 1,
-    park_id: 5,
-    rating: 3,
-    user_id: null
-  }]
+  // let testData = [{
+  //   comments: "This is an example comment",
+  //   id: 1,
+  //   park_id: 5,
+  //   rating: 3,
+  //   user_id: null
+  // }, {
+  //   comments: "This is an example comment",
+  //   id: 1,
+  //   park_id: 5,
+  //   rating: 3,
+  //   user_id: null
+  // }]
 
+    let agvRatingArray= idData.arr.ratings;
+    console.log(`ratings array: ${agvRatingArray}`)
 
  
   
