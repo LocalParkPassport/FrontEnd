@@ -45,7 +45,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ParkCard({ park }) {
+export default function ParkCard({park}) {
+  console.log(park);
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [idData, setIdData] = useState({
@@ -78,6 +79,7 @@ export default function ParkCard({ park }) {
       .delete(`https://parks-passport.herokuapp.com/api/parks/${park.id}`)
       .then(res => {
         console.log(res);
+        window.location.reload();
       })
       .catch(err => {
         console.log("An error has occured", err)

@@ -10,7 +10,7 @@ class Login extends React.Component {
             password: ''
         }
     }
-    submitForm= e => {
+    submitForm = e => {
         e.preventDefault()
         axios
         .post('https://parks-passport.herokuapp.com/api/auth/login', this.state.credentials)

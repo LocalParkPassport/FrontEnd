@@ -10,6 +10,7 @@ const DeletePark = (props) => {
             .delete(`https://parks-passport.herokuapp.com/api/parks/${props.park.id}`)
             .then(res => {
                 console.log(res);
+                props.history.push('/');
             })
             .catch(err => {
                 console.log("An error has occured", err)
