@@ -101,8 +101,8 @@ export default function ParkCard({ park }) {
   //   user_id: null
   // }]
 
-    let agvRatingArray= idData.arr.ratings;
-    console.log(`ratings array: ${agvRatingArray}`)
+    // let agvRatingArray= idData.arr.ratings;
+    // console.log(`ratings array: ${agvRatingArray}`)
 
  
   
@@ -113,14 +113,17 @@ export default function ParkCard({ park }) {
     <div className= 'ParkCard'>
       <Card className={classes.card}>
         <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              R
-            </Avatar>
-          }
+          // avatar={
+          //   <Avatar aria-label="recipe" className={classes.avatar}>
+          //     <FontAwesomeIcon icon={['fas', 'tree']} size="1x"/>
+          //   </Avatar>
+          // }
           action={
             <IconButton aria-label="settings">
-              <MoreVertIcon />
+              {/* <MoreVertIcon /> */}
+              { localStorage.getItem('token') &&
+      <button className='deleteparkbutton' onClick={handleDelete}><FontAwesomeIcon icon={['fas', 'minus-circle']} className='deleteicon' size="2x" /></button>
+      }
             </IconButton>
           }
 
@@ -134,9 +137,9 @@ export default function ParkCard({ park }) {
     
 
 
-      { localStorage.getItem('token') &&
+      {/* { localStorage.getItem('token') &&
       <button onClick={handleDelete}>Delete Park</button>
-      }
+      } */}
 
 
         {/* Image Section */}
