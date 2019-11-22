@@ -29,7 +29,7 @@ class Signup extends React.Component{
             localStorage.setItem('token', res.data.token)
             console.log(res)
         })
-        .then(res => window.location.href = '/login')
+        .then(res => this.props.history.push('/Login'))
         .catch(err => {
             console.log('login error', err)
         })

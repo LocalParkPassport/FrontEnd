@@ -52,6 +52,14 @@ export default function ParkCard({ park }) {
     arr: []
   });
 
+
+// Lock Feature
+/*
+      { localStorage.getItem('token') &&
+        
+      }
+*/ 
+
   
 
   useEffect(async () => { 
@@ -79,20 +87,22 @@ export default function ParkCard({ park }) {
   //   console.log(idData.arr)
   // }, [idData.arr])
 
-  let testData = [{
-    comments: "This is an example comment",
-    id: 1,
-    park_id: 5,
-    rating: 3,
-    user_id: null
-  }, {
-    comments: "This is an example comment",
-    id: 1,
-    park_id: 5,
-    rating: 3,
-    user_id: null
-  }]
+  // let testData = [{
+  //   comments: "This is an example comment",
+  //   id: 1,
+  //   park_id: 5,
+  //   rating: 3,
+  //   user_id: null
+  // }, {
+  //   comments: "This is an example comment",
+  //   id: 1,
+  //   park_id: 5,
+  //   rating: 3,
+  //   user_id: null
+  // }]
 
+    // let agvRatingArray= idData.arr.ratings;
+    // console.log(`ratings array: ${agvRatingArray}`)
 
  
   
@@ -103,14 +113,17 @@ export default function ParkCard({ park }) {
     <div className= 'ParkCard'>
       <Card className={classes.card}>
         <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              R
-            </Avatar>
-          }
+          // avatar={
+          //   <Avatar aria-label="recipe" className={classes.avatar}>
+          //     <FontAwesomeIcon icon={['fas', 'tree']} size="1x"/>
+          //   </Avatar>
+          // }
           action={
             <IconButton aria-label="settings">
-              <MoreVertIcon />
+              {/* <MoreVertIcon /> */}
+              { localStorage.getItem('token') &&
+      <button className='deleteparkbutton' onClick={handleDelete}><FontAwesomeIcon icon={['fas', 'minus-circle']} className='deleteicon' size="2x" /></button>
+      }
             </IconButton>
           }
 
@@ -122,8 +135,11 @@ export default function ParkCard({ park }) {
           subheader= {park.location}
         />
     
-      {/* <DeletePark park={park}/> */}
+
+
+      {/* { localStorage.getItem('token') &&
       <button onClick={handleDelete}>Delete Park</button>
+      } */}
 
 
         {/* Image Section */}
@@ -165,8 +181,10 @@ export default function ParkCard({ park }) {
           <CardContent>
                     {/* Display Ratings */}
                     <Ratings ratings={idData.arr}/> 
-                    {/* Add Ratings */}
-                    <CreateRating park={park}/>
+                    { localStorage.getItem('token') &&
+                      // {/* Add Ratings */}
+                      <CreateRating park={park}/>
+                    }
           </CardContent>
         </Collapse>
       </Card>

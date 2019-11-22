@@ -77,25 +77,35 @@ export default function ParkList() {
     return (
       <div>
       <NavBar />
-      { window.location.pathname !== '/create' &&
-        <a id="create-btn" href='/create'>
-          <FontAwesomeIcon icon={['fas', 'plus-circle']} size="3x"/>
-        </a>
-      }
-      <div>
-  
-           <TextField
-            id="standard-search"
-            label="Search field"
-            type="search"
-            name="query"
-            value={searchQuery.query}
-            onChange={handleChange}
-            className={classes.textField}
-            margin="normal"
-          />  
-        
-       </div>
+      <div className='searchandadd'>
+
+      <div className='empty'>
+
+      </div>
+
+      <div className='searchfield'>
+        <TextField
+          id="standard-search"
+          label="Search field"
+          type="search"
+          name="query"
+          value={searchQuery.query}
+          onChange={handleChange}
+          className={classes.textField}
+          margin="normal"
+        />  
+      </div>
+
+        <div class='addpark'>
+        { (window.location.pathname !== '/create' &&  localStorage.getItem('token')) &&
+          <a id="create-btn" href='/create'>
+            <FontAwesomeIcon icon={['fas', 'plus-circle']} className='addparkbutton' size="3x"/>
+          </a>
+        }
+        </div>
+
+      </div>
+
       <section className="ParkList">
         {parkList.arr.map((park, key) => {
           return <ParkCard key={key} park={park} />;

@@ -1,7 +1,24 @@
 #nav__contain a {
-    color: #fff;
+    color: #445c3c;
     text-decoration: none;
-    margin: 15px;
-    padding: 5px 15px;
-    border: 1px solid #fff;
+    margin: 25px;
+    padding: 7px 15px;
+    /* border: 1px solid #fae8c8; */
+    border-radius: 7px;
+    background-color: #c9d99e;
+    width: 100px;
+    font-weight: 500;
+}
+
+.NavBar button {
+    color: #445c3c;
+    text-decoration: none;
+    margin: 25px;
+    padding: 7px 15px;
+    /* border: 1px solid #fae8c8; */
+    border: none;
+    border-radius: 7px;
+    background-color: #c9d99e;
+    width: 100px;
+    font-weight: 700;
 }

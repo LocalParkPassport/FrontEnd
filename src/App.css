@@ -30,6 +30,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
   box-shadow:  #445c3c 0px 10px ;
 }
 
@@ -41,4 +43,31 @@
 /* Custom Styles */
 #create-btn {
   margin: 0 0 0 auto;
+}
+
+.searchandadd{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.addparkbutton{
+    color: #f44336;
+    text-decoration: none;
+}
+
+.deleteparkbutton{
+  border: none;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+.deleteicon {
+  color: #f44336;
+  text-decoration: none;
+}
+
+.amenitiesicon{
+  color:#445c3c;
 }
