@@ -54,6 +54,7 @@ const CreatePark = (props) => {
             .post(`https://parks-passport.herokuapp.com/api/parks`, inputs)
             .then(res => {
                 console.log(res);
+                props.history.push('/');
             })
             .catch(err => {
                 console.log("an error occured...", err.message);

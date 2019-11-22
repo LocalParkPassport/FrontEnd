@@ -19,6 +19,7 @@ const CreateRating = ({park}) => {
             .post(`https://parks-passport.herokuapp.com/api/parks/${park.id}/ratings`, inputs)
         .then(res => {
             console.log(res);
+            window.location.reload();
         })
         .catch(err => {
             console.log("There was an error...", err)
