@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Icon from '../Images/icon.png';
+import "./navbar.css"
  
 
 
@@ -8,15 +9,13 @@ function NavBar() {
     const signOut = () => {
         localStorage.clear()
         window.location.href='/'
-    }
-    console.log(localStorage.getItem('token'))
+    } 
     return (
         <div className='NavBar'>
             <div className='logo'>
             <img src={Icon} />
             </div>
             <div>
-
                 {
                     localStorage.getItem('token') ?
                     <div>
@@ -24,7 +23,7 @@ function NavBar() {
                     </div>   
                     : 
                     (
-                    <div>
+                    <div id="nav__contain">
                         <a href='/login'>Sign in</a>
                         <a href='/signup'>Sign up</a> 
                     </div>
